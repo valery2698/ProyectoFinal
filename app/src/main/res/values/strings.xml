@@ -7,4 +7,20 @@
     <string name="lastName">Apellido</string>
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
+    <string name="barberia">Barberia</string>
+
+    <string name="nuevaCita">Nueva Cita</string>
+    <string name="inicio">Inicio</string>
+    <string name="fecha">Fecha</string>
+    <string name="resumen">Resumen</string>
+
+    <string name="back_button">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="subtotal_price">Subtotal %s</string>
+
+    <string name="corte">Corte</string>
+    <string name="peinado">Peinado</string>
+
+
 </resources>

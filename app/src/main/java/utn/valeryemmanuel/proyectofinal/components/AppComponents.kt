@@ -17,6 +17,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
@@ -28,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -38,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import utn.valerycampos.tlcgo_anywhere.ui.theme.Shapes
+import utn.valeryemmanuel.proyectofinal.R
 import utn.valeryemmanuel.proyectofinal.ui.theme.Primary
 import utn.valeryemmanuel.proyectofinal.ui.theme.Secondary
 
@@ -176,6 +179,15 @@ fun ButtonComponent(value:String, onClick : (String)-> Unit){
         }
 
     }
+}
+
+@Composable
+fun FormattedPriceLabel(subtotal: String, modifier: Modifier = Modifier) {
+    Text(
+        text = stringResource(R.string.subtotal_price, subtotal),
+        modifier = modifier,
+        style = MaterialTheme.typography.headlineSmall
+    )
 }
 
 
