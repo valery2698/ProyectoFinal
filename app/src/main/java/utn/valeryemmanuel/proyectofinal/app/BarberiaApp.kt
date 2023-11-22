@@ -1,41 +1,54 @@
 package utn.valeryemmanuel.proyectofinal.app
 
-import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import android.annotation.SuppressLint
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import utn.valeryemmanuel.proyectofinal.R
 import androidx.navigation.compose.rememberNavController
-import utn.valeryemmanuel.proyectofinal.data.DataSource
-import utn.valeryemmanuel.proyectofinal.screens.CitaViewModel
-import utn.valeryemmanuel.proyectofinal.screens.HomeScreen
-import androidx.lifecycle.viewmodel.compose.viewModel
-import utn.valeryemmanuel.proyectofinal.screens.SelectOptionScreen
-import utn.valeryemmanuel.proyectofinal.screens.SignUpScreen
+import utn.valeryemmanuel.proyectofinal.navegation.AgendaNavHost
+
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@Composable
+fun BarberiaApp(navController: NavHostController = rememberNavController()) {
+    AgendaNavHost(navController = navController)
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AgendaTopAppBar(
+    title: String,
+    canNavigateBack: Boolean,
+    modifier: Modifier = Modifier,
+    scrollBehavior: TopAppBarScrollBehavior? = null,
+    navigateUp: () -> Unit = {}
+) {
+    CenterAlignedTopAppBar(title = { Text(title) },
+        modifier = modifier,
+        scrollBehavior = scrollBehavior,
+        navigationIcon = {
+            if (canNavigateBack) {
+                IconButton(onClick = navigateUp) {
+                    Icon(
+                        imageVector = Icons.Filled.ArrowBack,
+                        contentDescription = stringResource(R.string.back_button)
+                    )
+                }
+            }
+        })
+}
 
 
-enum class BarberiaScreen(@StringRes val title: Int) {
+/*enum class BarberiaScreen(@StringRes val title: Int) {
     Start(title = R.string.app_name), //Menu Principal
     Fecha(title = R.string.fecha), // Registra fecha para la cita
     Cita(title = R.string.nuevaCita), // Info para la cita
@@ -68,9 +81,9 @@ fun BarberiaAppBar(
             }
         }
     )
-}
+}*/
 
-@OptIn(ExperimentalMaterial3Api::class)
+/*@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BarberiaApp(
     viewModel: CitaViewModel = viewModel(),
@@ -148,5 +161,5 @@ private fun cancelOrderAndNavigateToStart(
 ) {
     viewModel.resetOrder()
     navController.popBackStack(BarberiaScreen.Start.name, inclusive = false)
-}
+}*/
 
