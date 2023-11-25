@@ -21,6 +21,8 @@
 
     <string name="corte">Corte</string>
     <string name="peinado">Peinado</string>
-
+    <string name="barba">Barba</string>
+    <string name="corteybarba">Corte y Barba</string>
+    <string name="cejas">Cuidado de cejas</string>
 
 </resources>

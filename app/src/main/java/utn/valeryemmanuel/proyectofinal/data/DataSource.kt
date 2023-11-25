@@ -7,6 +7,9 @@ object DataSource {
     val servicio = listOf(
         R.string.corte,
         R.string.peinado,
+        R.string.barba,
+        R.string.corteybarba,
+        R.string.cejas,
 
     )
 
