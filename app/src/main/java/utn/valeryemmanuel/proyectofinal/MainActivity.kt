@@ -12,30 +12,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import utn.valeryemmanuel.proyectofinal.app.BarberiaApp
 import utn.valeryemmanuel.proyectofinal.screens.SignUpScreen
-import utn.valeryemmanuel.proyectofinal.ui.theme.ProyectoFinalTheme
+import utn.valeryemmanuel.proyectofinal.ui.theme.AgendaTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ProyectoFinalTheme {
+
+            AgendaTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
                     BarberiaApp()
                 }
             }
+
         }
     }
 }
 
-
-/*@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ProyectoFinalTheme {
-        SignUpScreen()
-    }
-}*/

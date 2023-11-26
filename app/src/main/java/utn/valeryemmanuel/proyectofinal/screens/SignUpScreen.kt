@@ -19,8 +19,7 @@ import utn.valeryemmanuel.proyectofinal.components.HeadingTextComponent
 import utn.valeryemmanuel.proyectofinal.components.MyPasswordFieldComponent
 import utn.valeryemmanuel.proyectofinal.components.MyTextFieldComponent
 import utn.valeryemmanuel.proyectofinal.components.NormalTextComponent
-import utn.valeryemmanuel.proyectofinal.navegation.PostOfficeAppRouter
-import utn.valeryemmanuel.proyectofinal.navegation.Screen
+
 
 @Composable
 fun SignUpScreen(){
@@ -43,10 +42,7 @@ fun SignUpScreen(){
 
             Spacer(modifier = Modifier.height(80.dp))
 
-            ButtonComponent(value="Register",
-                onClick = {
-                    PostOfficeAppRouter.navigate(Screen.HomeScreen)
-                })
+
 
         }
 
